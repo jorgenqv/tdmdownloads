@@ -70,12 +70,12 @@ if (!$xoopsTpl->is_cached('db:tdmdownloads_rss.tpl', $cid)) {
     if (empty($dimention[0])) {
         $width = 88;
     } else {
-        $width = $dimention[0] > 144 ? 144 : $dimention[0];
+        $width = min($dimention[0], 144);
     }
     if (empty($dimention[1])) {
         $height = 31;
     } else {
-        $height = $dimention[1] > 400 ? 400 : $dimention[1];
+        $height = min($dimention[1], 400);
     }
     $xoopsTpl->assign('image_width', $width);
     $xoopsTpl->assign('image_height', $height);
