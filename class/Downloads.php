@@ -212,10 +212,8 @@ class Downloads extends \XoopsObject
                     /** @var \XoopsModules\Tdmdownloads\Fielddata[] $downloadsfielddata */
                     if ($erreur) {
                         $contenu = $donnee[$fieldName];
-                    } else {
-                        if (!$this->isNew()) {
+                    } elseif (!$this->isNew()) {
                             $contenu = $downloadsfielddata[$j]->getVar('data');
-                        }
                     }
                     $contenu_iddata = $downloadsfielddata[$j]->getVar('iddata');
                 }

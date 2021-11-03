@@ -291,10 +291,8 @@ if ($helper->getConfig('perpage') > 0) {
             if (!in_array($downloadsArray[$i]->getVar('cid'), $categories)) {
                 $downloadPermission = false;
             }
-        } else {
-            if (!in_array($downloadsArray[$i]->getVar('lid'), $item)) {
+        } elseif (!in_array($downloadsArray[$i]->getVar('lid'), $item)) {
                 $downloadPermission = false;
-            }
         }
         // utilisation du sommaire
         ++$cpt;

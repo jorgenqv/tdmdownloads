@@ -83,8 +83,7 @@ if (4 === $permission) {
     foreach ($global_perms_array as $perm_id => $permissionName) {
         $permissionsForm->addItem($perm_id, $permissionName);
     }
-} else {
-    if (3 === $permission && 2 === $helper->getConfig('permission_download')) {
+} elseif (3 === $permission && 2 === $helper->getConfig('permission_download')) {
         $sql    = 'SELECT lid, cid, title FROM ' . $xoopsDB->prefix('tdmdownloads_downloads') . ' ORDER BY title';
         $result = $xoopsDB->query($sql);
         if ($result instanceof \mysqli_result) {
@@ -100,7 +99,6 @@ if (4 === $permission) {
                 $permissionsForm->addItem($row['cat_cid'], $row['cat_title'], $row['cat_pid']);
             }
         }
-    }
 }
 if ($categoryHandler->getCount()) {
     $GLOBALS['xoopsTpl']->assign('form_permissions', $permissionsForm->render());

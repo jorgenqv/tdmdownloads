@@ -263,12 +263,10 @@ class Utility extends Common\SysUtility
                 $firstCategory = '';
             }
             $path .= $firstCategory;
-        } else {
-            if ($link) {
+        } elseif ($link) {
                 $path .= '<a href="index.php">' . $xoopsModule->name() . '</a>';
             } else {
                 $path .= $xoopsModule->name();
-            }
         }
         return $path;
     }

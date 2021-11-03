@@ -280,12 +280,10 @@ class Utilities
                 $first_category = '';
             }
             $Path .= $first_category;
-        } else {
-            if ($link) {
+        } elseif ($link) {
                 $Path .= '<a href="index.php">' . $xoopsModule->name() . '</a>';
             } else {
                 $Path .= $xoopsModule->name();
-            }
         }
         return $Path;
     }

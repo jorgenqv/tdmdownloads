@@ -232,12 +232,10 @@ if (1 == $helper->getConfig('permission_download')) {
     } else {
         $xoopsTpl->assign('perm_download', true);
     }
-} else {
-    if (!in_array($viewDownloads->getVar('lid'), $item)) {
+} elseif (!in_array($viewDownloads->getVar('lid'), $item)) {
         $xoopsTpl->assign('perm_download', false);
     } else {
         $xoopsTpl->assign('perm_download', true);
-    }
 }
 // pour utiliser tellafriend.
 if (1 == $helper->getConfig('usetellafriend') && is_dir('../tellafriend')) {

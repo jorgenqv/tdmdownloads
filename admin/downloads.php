@@ -535,8 +535,7 @@ switch ($op) {
                 $obj->setVar('status', 0);
                 $donnee['status'] = 0;
             }
-        } else {
-            if (\Xmf\Request::hasVar('date_update', 'POST') && 'Y' === $_POST['date_update']) {
+        } elseif (\Xmf\Request::hasVar('date_update', 'POST') && 'Y' === $_POST['date_update']) {
                 $obj->setVar('date', strtotime($_POST['date']));
                 if (\Xmf\Request::hasVar('status', 'POST')) {
                     $obj->setVar('status', 2);
@@ -558,7 +557,6 @@ switch ($op) {
                 } else {
                     $obj->setVar('date', time());
                 }
-            }
             //$donnee['date_update'] = $_POST['date_update']; //no more used later
         }
         // erreur si la description est vide
