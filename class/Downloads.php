@@ -98,7 +98,7 @@ class Downloads extends \XoopsObject
             $perm_upload = $grouppermHandler->checkRight('tdmdownloads_ac', 32, $groups, $xoopsModule->getVar('mid'));
         }
         //nom du formulaire selon l'action (editer ou ajouter):
-        $title = $this->isNew() ? \sprintf(_AM_TDMDOWNLOADS_FORMADD) : \sprintf(_AM_TDMDOWNLOADS_FORMEDIT);
+        $title = $this->isNew() ? _AM_TDMDOWNLOADS_FORMADD : _AM_TDMDOWNLOADS_FORMEDIT;
         //création du formulaire
         $form = new \XoopsThemeForm($title, 'form', $action, 'post', true);
         $form->setExtra('enctype="multipart/form-data"');

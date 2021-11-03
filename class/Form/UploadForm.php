@@ -55,7 +55,7 @@ class UploadForm extends \XoopsThemeForm
         /** @var \XoopsModules\Tdmdownloads\Helper $this- >helper */
         $this->helper       = $target->helper;
         $this->targetObject = $target;
-        $title              = $this->targetObject->isNew() ? \sprintf(\constant('CO_' . $moduleDirNameUpper . '_' . 'FIELD_ADD')) : \sprintf(\constant('CO_' . $moduleDirNameUpper . '_' . 'FIELD_EDIT'));
+        $title              = $this->targetObject->isNew() ? \constant('CO_' . $moduleDirNameUpper . '_' . 'FIELD_ADD') : \constant('CO_' . $moduleDirNameUpper . '_' . 'FIELD_EDIT');
         parent::__construct('', 'form', \xoops_getenv('SCRIPT_NAME'), 'post', true);
         $this->setExtra('enctype="multipart/form-data"');
         //include ID field, it's needed so the module knows if it is a new form or an edited form

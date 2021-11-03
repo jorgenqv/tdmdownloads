@@ -102,7 +102,7 @@ class Modified extends \XoopsObject
             $d_description = $viewDownloads->getVar('description', 'e');
         }
         //nom du formulaire
-        $title = \sprintf(_AM_TDMDOWNLOADS_FORMEDIT);
+        $title = _AM_TDMDOWNLOADS_FORMEDIT;
         //création du formulaire
         $form = new \XoopsThemeForm($title, 'form', $action, 'post', true);
         $form->setExtra('enctype="multipart/form-data"');

@@ -94,7 +94,7 @@ class Images extends \XoopsObject
             $action = $_SERVER['REQUEST_URI'];
         }
         // Title
-        $title = $this->isNew() ? \sprintf(\constant('CO_' . $moduleDirNameUpper . '_' . 'IMAGE_ADD')) : \sprintf(\constant('CO_' . $moduleDirNameUpper . '_' . 'IMAGE_EDIT'));
+        $title = $this->isNew() ? \constant('CO_' . $moduleDirNameUpper . '_' . 'IMAGE_ADD') : \constant('CO_' . $moduleDirNameUpper . '_' . 'IMAGE_EDIT');
         // Get Theme Form
         \xoops_load('XoopsFormLoader');
         $form = new \XoopsThemeForm($title, 'form', $action, 'post', true);
