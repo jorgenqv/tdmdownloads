@@ -59,7 +59,7 @@ echo <<<EOF
 EOF;
 //XoopsLoad::load('migrate', 'newbb');
 $configurator = new Configurator();
-$migrator     = new Migrate($configurator);
+$migrator     = new Migrate();
 $op           = Request::getCmd('op', 'show');
 $opShow       = Request::getCmd('show', null, 'POST');
 $opMigrate    = Request::getCmd('migrate', null, 'POST');
