@@ -27,7 +27,9 @@ namespace XoopsModules\Tdmdownloads\Form;
  */
 
 use Xmf\Request;
-use XoopsModules\Tdmdownloads;
+use XoopsModules\Tdmdownloads\{
+    CategoryHandler
+};
 
 require_once \dirname(__DIR__, 2) . '/include/common.php';
 //$moduleDirName = basename(dirname(dirname(__DIR__)));
@@ -62,7 +64,7 @@ class UploadForm extends \XoopsThemeForm
         $hidden = new \XoopsFormHidden('fid', $this->targetObject->getVar('cat_cid'));
         $this->addElement($hidden);
         unset($hidden);
-        $categoryHandler    = new \XoopsModules\Tdmdownloads\CategoryHandler();
+        $categoryHandler    = new CategoryHandler();
         $start              = Request::getInt('start', 0);
         $catPaginationLimit = $this->helper->getConfig('userpager') ?: 10;
         $criteria           = new \CriteriaCompo();
