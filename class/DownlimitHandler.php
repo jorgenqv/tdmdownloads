@@ -27,7 +27,6 @@ class DownlimitHandler extends \XoopsPersistableObjectHandler
 {
     /**
      * DownlimitHandler constructor.
-     * @param \XoopsDatabase|null $db
      */
     public function __construct(?\XoopsDatabase $db = null)
     {

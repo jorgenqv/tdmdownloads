@@ -27,7 +27,6 @@ class ModifiedfielddataHandler extends \XoopsPersistableObjectHandler
 {
     /**
      * ModifiedfielddataHandler constructor.
-     * @param \XoopsDatabase|null $db
      */
     public function __construct(?\XoopsDatabase $db = null)
     {

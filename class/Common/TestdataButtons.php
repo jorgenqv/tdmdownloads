@@ -48,9 +48,7 @@ class TestdataButtons
     /**
      * Load the test button configuration
      *
-     * @param \Xmf\Module\Admin $adminObject
      *
-     * @return void
      */
     public static function loadButtonConfig(Admin $adminObject): void
     {
@@ -76,7 +74,6 @@ class TestdataButtons
     /**
      * Hide the test buttons
      *
-     * @return void
      */
     public static function hideButtons(): void
     {
@@ -91,7 +88,6 @@ class TestdataButtons
     /**
      * Show the test buttons
      *
-     * @return void
      */
     public static function showButtons(): void
     {

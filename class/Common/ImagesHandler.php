@@ -27,7 +27,6 @@ class ImagesHandler extends \XoopsPersistableObjectHandler
 {
     /**
      * Constructor
-     * @param \XoopsDatabase|null $db
      */
     public function __construct(?\XoopsDatabase $db = null)
     {

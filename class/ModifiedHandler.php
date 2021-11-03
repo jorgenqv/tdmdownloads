@@ -27,7 +27,6 @@ class ModifiedHandler extends \XoopsPersistableObjectHandler
 {
     /**
      * ModifiedHandler constructor.
-     * @param \XoopsDatabase|null $db
      */
     public function __construct(?\XoopsDatabase $db = null)
     {

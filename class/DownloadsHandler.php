@@ -28,7 +28,6 @@ class DownloadsHandler extends \XoopsPersistableObjectHandler
     public $table_link;
     /**
      * DownloadsHandler constructor.
-     * @param \XoopsDatabase|null $db
      */
     public function __construct(?\XoopsDatabase $db = null)
     {

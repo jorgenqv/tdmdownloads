@@ -27,7 +27,6 @@ class BrokenHandler extends \XoopsPersistableObjectHandler
 {
     /**
      * BrokenHandler constructor.
-     * @param \XoopsDatabase|null $db
      */
     public function __construct(?\XoopsDatabase $db = null)
     {

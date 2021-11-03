@@ -27,7 +27,6 @@ class FielddataHandler extends \XoopsPersistableObjectHandler
 {
     /**
      * FielddataHandler constructor.
-     * @param \XoopsDatabase|null $db
      */
     public function __construct(?\XoopsDatabase $db = null)
     {
