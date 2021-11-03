@@ -200,8 +200,8 @@ class Images extends \XoopsObject
         //if (isset($albumsObj) && is_object($albumsObj)) {
         //$ret['alb_name'] = $albumsObj->getVar('alb_name');
         //}
-        $ret['state']      = $this->getVar('img_state');
-        $ret['state_text'] = $helper->getStateText($this->getVar('img_state'));
+//        $ret['state']      = $this->getVar('img_state');
+//        $ret['state_text'] = $helper->getStateText($this->getVar('img_state'));
         $ret['date']       = \formatTimestamp($this->getVar('img_date'), 's');
         $ret['submitter']  = \XoopsUser::getUnameFromId($this->getVar('img_submitter'));
         $ret['ip']         = $this->getVar('img_ip');

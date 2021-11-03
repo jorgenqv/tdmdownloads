@@ -77,7 +77,7 @@ if ('submit' === Request::getString('op', '', 'POST')) {
     echo $msg;
 } else {
     require_once $GLOBALS['xoops']->path('class/xoopsformloader.php');
-    $form  = new \XoopsThemeForm(sprintf(constant('CO_' . $moduleDirNameUpper . '_' . 'CLONE_TITLE'), $helper->getModule()->getVar('name', 'E')), 'clone', 'clone.php', 'post', true);
+    $form  = new \XoopsThemeForm(sprintf(constant('CO_' . $moduleDirNameUpper . '_' . 'CLONE_TITLE'), (string)$helper->getModule()->getVar('name', 'E')), 'clone', 'clone.php', 'post', true);
     $clone = new \XoopsFormText(constant('CO_' . $moduleDirNameUpper . '_' . 'CLONE_NAME'), 'clone', 20, 20, '');
     $clone->setDescription(constant('CO_' . $moduleDirNameUpper . '_' . 'CLONE_NAME_DSC'));
     $form->addElement($clone, true);

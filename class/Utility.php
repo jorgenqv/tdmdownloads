@@ -420,17 +420,18 @@ class Utility extends Common\SysUtility
     public static function cpHeader()
     {
         \xoops_cp_header();
+        $helper        = Helper::getInstance();
 
         //cannot use xoTheme, some conflit with admin gui
         echo '<link type="text/css" href="' . XOOPS_URL . '/modules/system/css/ui/' . \xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css" rel="stylesheet">
-    <link type="text/css" href="' . TDMDOWNLOADS_URL . '/assets/css/publisher.css" rel="stylesheet">
-    <script type="text/javascript" src="' . TDMDOWNLOADS_URL . '/assets/js/funcs.js"></script>
-    <script type="text/javascript" src="' . TDMDOWNLOADS_URL . '/assets/js/cookies.js"></script>
+    <link type="text/css" href="' . $helper->url('/assets/css/publisher.css') .'" rel="stylesheet">
+    <script type="text/javascript" src="' . $helper->url(  '/assets/js/funcs.js') .'"></script>
+    <script type="text/javascript" src="' . $helper->url(  '/assets/js/cookies.js') .'"></script>
     <script type="text/javascript" src="' . XOOPS_URL . '/browse.php?Frameworks/jquery/jquery.js"></script>
     <!-- <script type="text/javascript" src="' . XOOPS_URL . '/browse.php?Frameworks/jquery/jquery-migrate-1.2.1.js"></script> -->
     <script type="text/javascript" src="' . XOOPS_URL . '/browse.php?Frameworks/jquery/plugins/jquery.ui.js"></script>
-    <script type="text/javascript" src="' . TDMDOWNLOADS_URL . '/assets/js/ajaxupload.3.9.js"></script>
-    <script type="text/javascript" src="' . TDMDOWNLOADS_URL . '/assets/js/publisher.js"></script>
+    <script type="text/javascript" src="' . $helper->url(  '/assets/js/ajaxupload.3.9.js') .'"></script>
+    <script type="text/javascript" src="' . $helper->url(  '/assets/js/publisher.js') .'"></script>
     ';
     }
 

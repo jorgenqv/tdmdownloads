@@ -28,7 +28,7 @@ class Cloner
 
             // check all files in dir, and process it
             $handle = \opendir($path);
-            if ($handle) {
+            if (false !== $handle) {
                 while (false !== ($file = \readdir($handle))) {
                     if (0 !== \mb_strpos($file, '.')) {
                         self::cloneFileFolder("{$path}/{$file}");
@@ -38,7 +38,7 @@ class Cloner
             }
         } else {
             $noChangeExtensions = ['jpeg', 'jpg', 'gif', 'png', 'zip', 'ttf'];
-            if (\in_array(\mb_strtolower(\pathinfo($path, \PATHINFO_EXTENSION)), $noChangeExtensions, true)) {
+            if (\in_array(\mb_strtolower((string)\pathinfo($path, \PATHINFO_EXTENSION)), $noChangeExtensions, true)) {
                 // image
                 \copy($path, $newPath);
             } else {
