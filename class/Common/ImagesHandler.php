@@ -70,7 +70,7 @@ class ImagesHandler extends \XoopsPersistableObjectHandler
     {
         $crCountImages = new \CriteriaCompo();
         $crCountImages = $this->getImagesCriteria($crCountImages, $albId, $start, $limit, $sort, $order);
-        return parent::getCount($crCountImages);
+        return $this->getCount($crCountImages);
     }
 
     /**
@@ -85,7 +85,7 @@ class ImagesHandler extends \XoopsPersistableObjectHandler
     {
         $crAllImages = new \CriteriaCompo();
         $crAllImages = $this->getImagesCriteria($crAllImages, 0, $start, $limit, $sort, $order);
-        return parent::getAll($crAllImages);
+        return $this->getAll($crAllImages);
     }
 
     /**
