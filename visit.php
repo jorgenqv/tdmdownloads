@@ -27,7 +27,7 @@ $lid    = \Xmf\Request::getInt('lid', 0, 'REQUEST');
 $cid    = \Xmf\Request::getInt('cid', 0, 'REQUEST');
 // redirection si le téléchargement n'existe pas
 $viewDownloads = $downloadsHandler->get($lid);
-if (empty($viewDownloads)) {
+if (null === $viewDownloads) {
     redirect_header('index.php', 3, _MD_TDMDOWNLOADS_SINGLEFILE_NONEXISTENT);
 }
 //redirection si pas de permission (cat)
