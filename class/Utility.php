@@ -340,7 +340,7 @@ class Utility extends Common\SysUtility
      * Utility::getFileSize()
      *
      * @param mixed $url
-     * @return mixed|string
+     * @return int|string
      */
     public static function getFileSize($url)
     {
