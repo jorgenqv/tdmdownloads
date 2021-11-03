@@ -26,6 +26,7 @@ namespace XoopsModules\Tdmdownloads\Form;
  * @since           1.0.0
  */
 
+use Xmf\Module\Helper\Permission;
 use Xmf\Request;
 use XoopsModules\Tdmdownloads\{
     CategoryHandler
@@ -34,7 +35,7 @@ use XoopsModules\Tdmdownloads\{
 require_once \dirname(__DIR__, 2) . '/include/common.php';
 //$moduleDirName = basename(dirname(dirname(__DIR__)));
 //$helper = Tdmdownloads\Helper::getInstance();
-$permHelper = new \Xmf\Module\Helper\Permission();
+$permHelper = new Permission();
 \xoops_load('XoopsFormLoader');
 
 /**
