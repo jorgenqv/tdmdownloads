@@ -42,7 +42,7 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation(basename(__FILE__)));
         $adminObject->addItemButton(_AM_TDMDOWNLOADS_CAT_NEW, 'category.php?op=new_cat', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
-        $GLOBALS['xoopsTpl']->assign('tdmdownloads_url', TDMDOWNLOADS_URL);
+        $GLOBALS['xoopsTpl']->assign('tdmdownloads_url', $helper->url());
         $criteria = new \CriteriaCompo();
         $criteria->setSort('cat_weight ASC, cat_title');
         $criteria->setOrder('ASC');

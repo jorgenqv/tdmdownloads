@@ -449,8 +449,10 @@ class Utility extends Common\SysUtility
             $display = 'block';
         }
 
+        $helper        = Helper::getInstance();
+
         echo "<h3 style=\"color: #2F5376; font-weight: bold; font-size: 14px; margin: 6px 0 0 0; \"><a href='javascript:;' onclick=\"toggle('" . $tablename . "'); toggleIcon('" . $iconname . "')\">";
-        echo "<img id='" . $iconname . "' src='" . TDMDOWNLOADS_URL . '/assets/images/links/' . $image . "' alt=''></a>&nbsp;" . $tabletitle . '</h3>';
+        echo "<img id='" . $iconname . "' src='" . $helper->url(   '/assets/images/links/') . $image . "' alt=''></a>&nbsp;" . $tabletitle . '</h3>';
         echo "<div id='" . $tablename . "' style='display: " . $display . ";'>";
         if ('' != $tabledsc) {
             echo '<span style="color: #567; margin: 3px 0 12px 0; font-size: small; display: block; ">' . $tabledsc . '</span>';
