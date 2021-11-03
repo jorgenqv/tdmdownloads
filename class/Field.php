@@ -105,11 +105,11 @@ class Field extends \XoopsObject
         $search = $this->getVar('search') ?: 0;
         $form->addElement(new \XoopsFormRadioYN(_AM_TDMDOWNLOADS_FORMAFFICHESEARCH, 'search', $search));
         // pour passer "fid" si on modifie le champ
-        if (!$this->isNew()) {
+        if ($this->isNew()) {
+            $form->addElement(new \XoopsFormHidden('status_def', 0));
+        } else {
             $form->addElement(new \XoopsFormHidden('fid', $this->getVar('fid')));
             $form->addElement(new \XoopsFormHidden('status_def', $this->getVar('status_def')));
-        } else {
-            $form->addElement(new \XoopsFormHidden('status_def', 0));
         }
         //pour enregistrer le formulaire
         $form->addElement(new \XoopsFormHidden('op', 'save_field'));

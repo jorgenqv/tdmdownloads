@@ -212,10 +212,10 @@ if ($helper->getConfig('newdownloads') > 0) {
         $submitter   = \XoopsUser::getUnameFromId($downloadsArray[$i]->getVar('submitter'));
         $description = $downloadsArray[$i]->getVar('description');
         //permet d'afficher uniquement la description courte
-        if (false === mb_strpos($description, '[pagebreak]')) {
-            $descriptionShort = $description;
-        } else {
+        if (false !== mb_strpos($description, '[pagebreak]')) {
             $descriptionShort = mb_substr($description, 0, mb_strpos($description, '[pagebreak]'));
+        } else {
+            $descriptionShort = $description;
         }
         // pour les vignettes "new" et "mis à jour"
         $new = $utility->getStatusImage($downloadsArray[$i]->getVar('date'), $downloadsArray[$i]->getVar('status'));

@@ -316,12 +316,12 @@ class Downloads extends \XoopsObject
                     $grouppermHandler = \xoops_getHandler('groupperm');
                     $full_list        = \array_keys($group_list);
                     global $xoopsModule;
-                    if (!$this->isNew()) {
+                    if ($this->isNew()) {
+                        $item_news_can_download_checkbox = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_FORMPERMDOWNLOAD, 'item_download[]', $full_list);
+                    } else {
                         $item_ids_download               = $grouppermHandler->getGroupIds('tdmdownloads_download_item', $this->getVar('lid'), $xoopsModule->getVar('mid'));
                         $item_ids_downloa                = \array_values($item_ids_download);
                         $item_news_can_download_checkbox = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_FORMPERMDOWNLOAD, 'item_download[]', $item_ids_download);
-                    } else {
-                        $item_news_can_download_checkbox = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_FORMPERMDOWNLOAD, 'item_download[]', $full_list);
                     }
                     $item_news_can_download_checkbox->addOptionArray($group_list);
                     $form->addElement($item_news_can_download_checkbox);

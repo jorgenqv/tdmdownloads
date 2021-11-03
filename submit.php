@@ -159,12 +159,12 @@ switch ($op) {
                     $uploader->setPrefix($helper->getConfig('prefixdownloads'));
                 }
                 $uploader->fetchMedia($_POST['xoops_upload_file'][0]);
-                if (!$uploader->upload()) {
-                    $errors = $uploader->getErrors();
-                    redirect_header('javascript:history.go(-1)', 3, $errors);
-                } else {
+                if ($uploader->upload()) {
                     $mediaSize = $uploader->getMediaSize();
                     $obj->setVar('url', $uploadurl_downloads . $uploader->getSavedFileName());
+                } else {
+                    $errors = $uploader->getErrors();
+                    redirect_header('javascript:history.go(-1)', 3, $errors);
                 }
             } else {
                 if ($_FILES['attachedfile']['name'] > '') {
@@ -194,11 +194,11 @@ switch ($op) {
             if ($uploader_2->fetchMedia($_POST['xoops_upload_file'][1])) {
                 $uploader_2->setPrefix('downloads_');
                 $uploader_2->fetchMedia($_POST['xoops_upload_file'][1]);
-                if (!$uploader_2->upload()) {
+                if ($uploader_2->upload()) {
+                    $obj->setVar('logourl', $uploader_2->getSavedFileName());
+                } else {
                     $errors = $uploader_2->getErrors();
                     redirect_header('javascript:history.go(-1)', 3, $errors);
-                } else {
-                    $obj->setVar('logourl', $uploader_2->getSavedFileName());
                 }
             } else {
                 if ($_FILES['attachedimage']['name'] > '') {

@@ -682,10 +682,10 @@ switch ($op) {
         }
         // enregistrement
         if ($downloadsHandler->insert($obj)) {
-            if (!\Xmf\Request::hasVar('downloads_modified')) {
-                $lidDownloads = $obj->getNewEnreg($db);
-            } else {
+            if (\Xmf\Request::hasVar('downloads_modified')) {
                 $lidDownloads = \Xmf\Request::getInt('lid');
+            } else {
+                $lidDownloads = $obj->getNewEnreg($db);
             }
             //tags
             if (1 == $helper->getConfig('usetag') && class_exists(TagHandler::class)) {

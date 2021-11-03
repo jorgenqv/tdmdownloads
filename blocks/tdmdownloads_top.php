@@ -108,13 +108,13 @@ function b_tdmdownloads_top_show($options)
             $description = $downloadsArray[$i]->getVar('description');
             //permet d'afficher uniquement la description courte
             if ($length_description > 0) {
-                if (false === mb_strpos($description, '[pagebreak]')) {
+                if (false !== mb_strpos($description, '[pagebreak]')) {
+                    $descriptionFinal = mb_substr($description, 0, mb_strpos($description, '[pagebreak]')) . ' ...';
+                } else {
                     $descriptionFinal = mb_substr($description, 0, $length_description);
                     if (mb_strlen($description) > mb_strlen($descriptionFinal)) {
                         $descriptionFinal .= ' ...';
                     }
-                } else {
-                    $descriptionFinal = mb_substr($description, 0, mb_strpos($description, '[pagebreak]')) . ' ...';
                 }
             } else {
                 $descriptionFinal = $description;

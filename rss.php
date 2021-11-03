@@ -83,10 +83,10 @@ if (!$xoopsTpl->is_cached('db:tdmdownloads_rss.tpl', $cid)) {
         /** @var \XoopsModules\Tdmdownloads\Downloads[] $downloadsArray */
         $description = $downloadsArray[$i]->getVar('description');
         //permet d'afficher uniquement la description courte
-        if (false === mb_strpos($description, '[pagebreak]')) {
-            $descriptionShort = $description;
-        } else {
+        if (false !== mb_strpos($description, '[pagebreak]')) {
             $descriptionShort = mb_substr($description, 0, mb_strpos($description, '[pagebreak]'));
+        } else {
+            $descriptionShort = $description;
         }
         $xoopsTpl->append('items', [
             'title'       => htmlspecialchars($downloadsArray[$i]->getVar('title'), ENT_QUOTES),

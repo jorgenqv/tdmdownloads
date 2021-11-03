@@ -350,11 +350,11 @@ class Utility extends Common\SysUtility
             \curl_setopt($curlHandle, \CURLOPT_NOBODY, true);
             \curl_setopt($curlHandle, \CURLOPT_SSL_VERIFYPEER, true); //TODO: how to avoid an error when 'Peer's Certificate issuer is not recognized'
             $curlReturn = \curl_exec($curlHandle);
-            if (false === $curlReturn) {
+            if (false !== $curlReturn) {
+                $size = \curl_getinfo($curlHandle, \CURLINFO_CONTENT_LENGTH_DOWNLOAD);
+            } else {
                 \trigger_error(\curl_error($curlHandle));
                 $size = 0;
-            } else {
-                $size = \curl_getinfo($curlHandle, \CURLINFO_CONTENT_LENGTH_DOWNLOAD);
             }
             \curl_close($curlHandle);
             if ($size <= 0) {

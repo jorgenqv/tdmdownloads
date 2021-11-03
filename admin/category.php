@@ -329,11 +329,11 @@ switch ($op) {
         if ($uploader->fetchMedia($_POST['xoops_upload_file'][0])) {
             $uploader->setPrefix('downloads_');
             $uploader->fetchMedia($_POST['xoops_upload_file'][0]);
-            if (!$uploader->upload()) {
+            if ($uploader->upload()) {
+                $obj->setVar('cat_imgurl', $uploader->getSavedFileName());
+            } else {
                 $errors = $uploader->getErrors();
                 redirect_header('javascript:history.go(-1)', 3, $errors);
-            } else {
-                $obj->setVar('cat_imgurl', $uploader->getSavedFileName());
             }
         } else {
             $obj->setVar('cat_imgurl', \Xmf\Request::getString('downloadscat_img', '', 'REQUEST'));

@@ -48,10 +48,10 @@ class Rating extends \XoopsObject
         if (!$action) {
             $action = $_SERVER['REQUEST_URI'];
         }
-        if (!$this->isNew()) {
-            $rating = 11;
-        } else {
+        if ($this->isNew()) {
             $rating = $this->getVar('rating');
+        } else {
+            $rating = 11;
         }
         $form = new \XoopsThemeForm(_MD_TDMDOWNLOADS_SINGLEFILE_RATHFILE, 'rateform', 'ratefile.php', 'post');
         $form->setExtra('enctype="multipart/form-data"');

@@ -186,11 +186,11 @@ switch ($op) {
         if ($uploader->fetchMedia($_POST['xoops_upload_file'][0])) {
             $uploader->setPrefix('downloads_');
             $uploader->fetchMedia($_POST['xoops_upload_file'][0]);
-            if (!$uploader->upload()) {
+            if ($uploader->upload()) {
+                $obj->setVar('img', $uploader->getSavedFileName());
+            } else {
                 $errors = $uploader->getErrors();
                 redirect_header('javascript:history.go(-1)', 3, $errors);
-            } else {
-                $obj->setVar('img', $uploader->getSavedFileName());
             }
         } else {
             $obj->setVar('img', \Xmf\Request::getString('downloadsfield_img', '', 'POST'));

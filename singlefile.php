@@ -227,10 +227,10 @@ $xoopsTpl->assign('perm_modif', $perm_modif);
 $categories = $utility->getItemIds('tdmdownloads_download', $moduleDirName);
 $item       = $utility->getItemIds('tdmdownloads_download_item', $moduleDirName);
 if (1 == $helper->getConfig('permission_download')) {
-    if (!in_array($viewDownloads->getVar('cid'), $categories)) {
-        $xoopsTpl->assign('perm_download', false);
-    } else {
+    if (in_array($viewDownloads->getVar('cid'), $categories)) {
         $xoopsTpl->assign('perm_download', true);
+    } else {
+        $xoopsTpl->assign('perm_download', false);
     }
 } elseif (!in_array($viewDownloads->getVar('lid'), $item)) {
         $xoopsTpl->assign('perm_download', false);
@@ -275,10 +275,10 @@ $xoopsTpl->assign('xoops_pagetitle', $pagetitle);
 //version for title
 $xoopsTpl->assign('version', $viewDownloads->getVar('version'));
 //description
-if (false === mb_strpos($description, '[pagebreak]')) {
-    $descriptionShort = mb_substr($description, 0, 400);
-} else {
+if (false !== mb_strpos($description, '[pagebreak]')) {
     $descriptionShort = mb_substr($description, 0, mb_strpos($description, '[pagebreak]'));
+} else {
+    $descriptionShort = mb_substr($description, 0, 400);
 }
 $xoTheme->addMeta('meta', 'description', strip_tags($descriptionShort));
 //keywords

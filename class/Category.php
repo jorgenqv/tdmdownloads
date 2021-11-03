@@ -131,7 +131,11 @@ class Category extends \XoopsObject
         $grouppermHandler = \xoops_getHandler('groupperm');
         $full_list        = \array_keys($group_list);
         global $xoopsModule;
-        if (!$this->isNew()) {
+        if ($this->isNew()) {
+            $groups_news_can_view_checkbox     = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_PERM_VIEW_DSC, 'groups_view[]', $full_list);
+            $groups_news_can_submit_checkbox   = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_PERM_SUBMIT_DSC, 'groups_submit[]', $full_list);
+            $groups_news_can_download_checkbox = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_PERM_DOWNLOAD_DSC, 'groups_download[]', $full_list);
+        } else {
             $groups_ids_view                   = $grouppermHandler->getGroupIds('tdmdownloads_view', $this->getVar('cat_cid'), $xoopsModule->getVar('mid'));
             $groups_ids_submit                 = $grouppermHandler->getGroupIds('tdmdownloads_submit', $this->getVar('cat_cid'), $xoopsModule->getVar('mid'));
             $groups_ids_download               = $grouppermHandler->getGroupIds('tdmdownloads_download', $this->getVar('cat_cid'), $xoopsModule->getVar('mid'));
@@ -141,10 +145,6 @@ class Category extends \XoopsObject
             $groups_news_can_submit_checkbox   = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_PERM_SUBMIT_DSC, 'groups_submit[]', $groups_ids_submit);
             $groups_ids_download               = \array_values($groups_ids_download);
             $groups_news_can_download_checkbox = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_PERM_DOWNLOAD_DSC, 'groups_download[]', $groups_ids_download);
-        } else {
-            $groups_news_can_view_checkbox     = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_PERM_VIEW_DSC, 'groups_view[]', $full_list);
-            $groups_news_can_submit_checkbox   = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_PERM_SUBMIT_DSC, 'groups_submit[]', $full_list);
-            $groups_news_can_download_checkbox = new \XoopsFormCheckBox(_AM_TDMDOWNLOADS_PERM_DOWNLOAD_DSC, 'groups_download[]', $full_list);
         }
         // pour voir
         $groups_news_can_view_checkbox->addOptionArray($group_list);
