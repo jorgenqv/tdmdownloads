@@ -20,6 +20,7 @@
 - add credits for Goffy (mamba)
 - add xbootstrap templates to /extra (mamba)
 - changed styling for Categories in Preferences (mamba)
+- add cloning (mamba)
 
 
 <h5>2.01 Beta 1        [2021-08-08]</h5>  Dev: XOOPS 2.5.11, PHP 7.4.22, PHP 8.08

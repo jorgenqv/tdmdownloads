@@ -17,6 +17,8 @@ namespace XoopsModules\Tdmdownloads;
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
+use Xmf\Request;
+
 /**
  * Class Utility
  */
@@ -411,4 +413,125 @@ class Utility extends Common\SysUtility
                 return $val;
         }
     }
+
+    /**
+     * Includes scripts in HTML header
+     */
+    public static function cpHeader()
+    {
+        \xoops_cp_header();
+
+        //cannot use xoTheme, some conflit with admin gui
+        echo '<link type="text/css" href="' . XOOPS_URL . '/modules/system/css/ui/' . \xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css" rel="stylesheet">
+    <link type="text/css" href="' . TDMDOWNLOADS_URL . '/assets/css/publisher.css" rel="stylesheet">
+    <script type="text/javascript" src="' . TDMDOWNLOADS_URL . '/assets/js/funcs.js"></script>
+    <script type="text/javascript" src="' . TDMDOWNLOADS_URL . '/assets/js/cookies.js"></script>
+    <script type="text/javascript" src="' . XOOPS_URL . '/browse.php?Frameworks/jquery/jquery.js"></script>
+    <!-- <script type="text/javascript" src="' . XOOPS_URL . '/browse.php?Frameworks/jquery/jquery-migrate-1.2.1.js"></script> -->
+    <script type="text/javascript" src="' . XOOPS_URL . '/browse.php?Frameworks/jquery/plugins/jquery.ui.js"></script>
+    <script type="text/javascript" src="' . TDMDOWNLOADS_URL . '/assets/js/ajaxupload.3.9.js"></script>
+    <script type="text/javascript" src="' . TDMDOWNLOADS_URL . '/assets/js/publisher.js"></script>
+    ';
+    }
+
+    /**
+     * @param string $tablename
+     * @param string $iconname
+     * @param string $tabletitle
+     * @param string $tabledsc
+     * @param bool   $open
+     */
+    public static function openCollapsableBar($tablename = '', $iconname = '', $tabletitle = '', $tabledsc = '', $open = true)
+    {
+        $image   = 'open12.gif';
+        $display = 'none';
+        if ($open) {
+            $image   = 'close12.gif';
+            $display = 'block';
+        }
+
+        echo "<h3 style=\"color: #2F5376; font-weight: bold; font-size: 14px; margin: 6px 0 0 0; \"><a href='javascript:;' onclick=\"toggle('" . $tablename . "'); toggleIcon('" . $iconname . "')\">";
+        echo "<img id='" . $iconname . "' src='" . TDMDOWNLOADS_URL . '/assets/images/links/' . $image . "' alt=''></a>&nbsp;" . $tabletitle . '</h3>';
+        echo "<div id='" . $tablename . "' style='display: " . $display . ";'>";
+        if ('' != $tabledsc) {
+            echo '<span style="color: #567; margin: 3px 0 12px 0; font-size: small; display: block; ">' . $tabledsc . '</span>';
+        }
+    }
+
+    /**
+     * @param string $name
+     * @param string $icon
+     */
+    public static function closeCollapsableBar($name, $icon)
+    {
+        echo '</div>';
+
+        $urls = static::getCurrentUrls();
+        $path = $urls['phpself'];
+
+        $cookieName = $path . '_publisher_collaps_' . $name;
+        $cookieName = \str_replace('.', '_', $cookieName);
+        $cookie     = static::getCookieVar($cookieName, '');
+
+        if ('none' === $cookie) {
+            echo '
+        <script type="text/javascript">
+     <!--
+        toggle("' . $name . '"); 
+        toggleIcon("' . $icon . '");
+        -->
+        </script>
+        ';
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public static function getCurrentUrls()
+    {
+        $http = false === \mb_strpos(XOOPS_URL, 'https://') ? 'http://' : 'https://';
+        //    $phpself     = $_SERVER['SCRIPT_NAME'];
+        //    $httphost    = $_SERVER['HTTP_HOST'];
+        //    $querystring = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
+        $phpself     = Request::getString('SCRIPT_NAME', '', 'SERVER');
+        $httphost    = Request::getString('HTTP_HOST', '', 'SERVER');
+        $querystring = Request::getString('QUERY_STRING', '', 'SERVER');
+
+        if ('' != $querystring) {
+            $querystring = '?' . $querystring;
+        }
+
+        $currenturl = $http . $httphost . $phpself . $querystring;
+
+        $urls                = [];
+        $urls['http']        = $http;
+        $urls['httphost']    = $httphost;
+        $urls['phpself']     = $phpself;
+        $urls['querystring'] = $querystring;
+        $urls['full']        = $currenturl;
+
+        return $urls;
+    }
+
+
+    /**
+     * @param string $name
+     * @param string $default
+     * @return string
+     */
+    public static function getCookieVar($name, $default = '')
+    {
+        //    if (isset($_COOKIE[$name]) && ($_COOKIE[$name] > '')) {
+        //        return $_COOKIE[$name];
+        //    } else {
+        //        return $default;
+        //    }
+        return Request::getString($name, $default, 'COOKIE');
+    }
+
+
+
+
+
 }

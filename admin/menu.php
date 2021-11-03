@@ -97,6 +97,14 @@ if (is_object($helper->getModule()) && $helper->getConfig('displayDeveloperTools
         'icon'  => $pathIcon32 . '/database_go.png',
     ];
 }
+
+//Clone
+$adminmenu[] = [
+    'title' => _MI_TDMDOWNLOADS_MENU_CLONE,
+    'link'  => 'admin/clone.php',
+    'icon'  => $pathModIcon32 . '/editcopy.png',
+];
+
 $adminmenu[] = [
     'title' => _MI_TDMDOWNLOADS_ADMENU9,
     'link'  => 'admin/about.php',
