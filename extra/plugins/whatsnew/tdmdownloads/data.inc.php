@@ -84,7 +84,7 @@ function tdmdownloads_data($limit = 0, $offset = 0)
         while (false !== ($myrow = $xoopsDB->fetchArray($result))) {
             $id               = $myrow['lid'];
             $ret[$i]['id']    = $id;
-            $ret[$i]['link']  = XOOPS_URL . "/modules/$moduleDirName/singlefile.php?lid=" . $id . '';
+            $ret[$i]['link']  = XOOPS_URL . "/modules/$moduleDirName/singlefile.php?lid=" . $id;
             $ret[$i]['title'] = $myrow['title'];
             $ret[$i]['time']  = $myrow['date'];
             ++$i;

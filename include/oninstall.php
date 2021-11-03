@@ -90,7 +90,7 @@ function xoops_module_install_tdmdownloads()
     $obj->setVar('status_def', 1);
     $fieldHandler->insert($obj);
     //File creation ".$namemodule."/
-    $dir = XOOPS_ROOT_PATH . '/uploads/' . $namemodule . '';
+    $dir = XOOPS_ROOT_PATH . '/uploads/' . $namemodule;
     if (!is_dir($dir)) {
         if (!mkdir($dir, 0777) && !is_dir($dir)) {
             throw new \RuntimeException(sprintf('Directory "%s" was not created', $dir));
