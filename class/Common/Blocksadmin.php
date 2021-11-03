@@ -131,8 +131,10 @@ class Blocksadmin
             $sql               = 'SELECT module_id FROM ' . $this->db->prefix('block_module_link') . ' WHERE block_id=' . $i->getVar('bid');
             $result            = $this->db->query($sql);
             $modules           = [];
-            while (false !== ($row = $this->db->fetchArray($result))) {
-                $modules[] = (int)$row['module_id'];
+            if ($result instanceof \mysqli_result) {
+                while (false !== ($row = $this->db->fetchArray($result))) {
+                    $modules[] = (int)$row['module_id'];
+                }
             }
 
             $cachetimeOptions = '';
