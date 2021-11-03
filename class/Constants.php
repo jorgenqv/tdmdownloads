@@ -49,16 +49,16 @@ class Constants
 
     // common constants
     // constants for state
-    const STATE_OFFLINE_VAL = 0;
-    const STATE_ONLINE_VAL = 1;
-    const STATE_APPROVAL_VAL = 2;
+    public const STATE_OFFLINE_VAL = 0;
+    public const STATE_ONLINE_VAL  = 1;
+    public const STATE_APPROVAL_VAL = 2;
 
     // constants for rating
-    const RATING_NONE = 0;
-    const RATING_5STARS = 1;
-    const RATING_10STARS = 2;
-    const RATING_LIKES = 3;
-    const RATING_10NUM = 4;
+    public const RATING_NONE = 0;
+    public const RATING_5STARS = 1;
+    public const RATING_10STARS = 2;
+    public const RATING_LIKES   = 3;
+    public const RATING_10NUM = 4;
 
 
     //Application Folders (from xHelp module)
