@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /**
- * TDMDownloads
+ * Tdmdownloads
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -17,7 +17,7 @@ declare(strict_types=1);
  */
 
 // Nom du module
-define('_MI_TDMDOWNLOADS_NAME', 'TDMDownloads');
+define('_MI_TDMDOWNLOADS_NAME', 'Tdmdownloads');
 define('_MI_TDMDOWNLOADS_DIRNAME', basename(dirname(__DIR__, 2)));
 define('_MI_TDMDOWNLOADS_HELP_HEADER', __DIR__ . '/help/helpheader.tpl');
 // Description du module
@@ -248,3 +248,6 @@ define('_MI_TDMDOWNLOADS_CONFCAT_SEARCH', '<span style="color: #FF0000; font-siz
 define('_MI_TDMDOWNLOADS_CONFCAT_SEARCH_DSC', '<span style="color: #FF0000; font-size: Small;  font-weight: bold;">--- ---</span> ');
 
 //define('_MI_TDMDOWNLOADS_ADMENU5', 'Blocks Admin');
+//Clone
+define('_MI_TDMDOWNLOADS_MENU_CLONE', 'Clone');
+

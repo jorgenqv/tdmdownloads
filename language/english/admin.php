@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /**
- * TDMDownloads
+ * Tdmdownloads
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -69,8 +69,8 @@ define('_AM_TDMDOWNLOADS_PERM_VIEW_DSC', 'Choose group than can view files in ca
 // Import.php
 define('_AM_TDMDOWNLOADS_IMPORT1', 'Import');
 define('_AM_TDMDOWNLOADS_IMPORT_CAT_IMP', "Categories: '%s' imported");
-define('_AM_TDMDOWNLOADS_IMPORT_CONF_MYDOWNLOADS', 'Are you sure you want to import data from Mydownloads module to TDMDownloads');
-define('_AM_TDMDOWNLOADS_IMPORT_CONF_WFDOWNLOADS', 'Are you sure you want to import data from WF-Downloads module to TDMDownloads');
+define('_AM_TDMDOWNLOADS_IMPORT_CONF_MYDOWNLOADS', 'Are you sure you want to import data from Mydownloads module to Tdmdownloads');
+define('_AM_TDMDOWNLOADS_IMPORT_CONF_WFDOWNLOADS', 'Are you sure you want to import data from WF-Downloads module to Tdmdownloads');
 define('_AM_TDMDOWNLOADS_IMPORT_DONT_DOWNLOADS', 'there are no files to import');
 define('_AM_TDMDOWNLOADS_IMPORT_DONT_TOPIC', 'there are no files to import');
 define('_AM_TDMDOWNLOADS_IMPORT_DOWNLOADS', 'files Import');
@@ -87,7 +87,7 @@ define('_AM_TDMDOWNLOADS_IMPORT_OK', 'Import successfully done!');
 define('_AM_TDMDOWNLOADS_IMPORT_VOTE_IMP', "VOTES: '%s' imported;");
 define(
     '_AM_TDMDOWNLOADS_IMPORT_WARNING',
-    "<span style='color:#FF0000; font-size:16px; font-weight:bold'>Attention !</span><br><br> Import will delete all data in TDMDownloads. It's highly recommended that you make a backup of all your data first, as well as of your website.<br><br>TDM is not responsible if you lose your data. Unfortunately, the screen shots cannot be copied."
+    "<span style='color:#FF0000; font-size:16px; font-weight:bold'>Attention !</span><br><br> Import will delete all data in Tdmdownloads. It's highly recommended that you make a backup of all your data first, as well as of your website.<br><br>TDM is not responsible if you lose your data. Unfortunately, the screen shots cannot be copied."
 );
 define('_AM_TDMDOWNLOADS_IMPORT_WFDOWNLOADS', 'Import from WF Downloads (only for V3.23 RC5)');
 define('_AM_TDMDOWNLOADS_IMPORT_WFDOWNLOADS_CATIMG', 'Select Upload Directory (the path) for categories images of WF-Downloads');

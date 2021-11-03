@@ -3,7 +3,7 @@
 declare(strict_types=1);
 /*************************************************************************/
 # Waiting Contents Extensible                                            #
-# Plugin for module TDMDownloads                                         #
+# Plugin for module Tdmdownloads                                         #
 #                                                                        #
 # Author                                                                 #
 # Danordesign     -   flying.tux@gmail.com                               #
@@ -28,7 +28,7 @@ function b_waiting_tdmdownloads()
         $block['lang_linkname'] = _PI_WAITING_WAITINGS;
     }
     $ret[] = $block;
-    // TDMDownloads broken
+    // Tdmdownloads broken
     $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('tdmdownloads_broken'));
     if ($result) {
@@ -37,7 +37,7 @@ function b_waiting_tdmdownloads()
         $block['lang_linkname'] = _PI_WAITING_BROKENS;
     }
     $ret[] = $block;
-    // TDMDownloads modreq
+    // Tdmdownloads modreq
     $block  = [];
     $result = $xoopsDB->query('SELECT COUNT(*) FROM ' . $xoopsDB->prefix('tdmdownloads_mod'));
     if ($result) {

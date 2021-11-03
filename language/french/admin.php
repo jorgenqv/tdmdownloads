@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /**
- * TDMDownloads
+ * Tdmdownloads
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -69,8 +69,8 @@ define('_AM_TDMDOWNLOADS_PERM_VIEW_DSC', 'Choisissez les groupes qui peuvent voi
 // Import.php
 define('_AM_TDMDOWNLOADS_IMPORT1', 'Importation');
 define('_AM_TDMDOWNLOADS_IMPORT_CAT_IMP', 'Catégories: « %s » importées');
-define('_AM_TDMDOWNLOADS_IMPORT_CONF_MYDOWNLOADS', 'Êtes-vous sûr de vouloir importer les données du module Mydownloads vers TDMDownloads ?');
-define('_AM_TDMDOWNLOADS_IMPORT_CONF_WFDOWNLOADS', 'Êtes-vous sûr de vouloir importer les données du module WF-Downloads vers TDMDownloads ?');
+define('_AM_TDMDOWNLOADS_IMPORT_CONF_MYDOWNLOADS', 'Êtes-vous sûr de vouloir importer les données du module Mydownloads vers Tdmdownloads ?');
+define('_AM_TDMDOWNLOADS_IMPORT_CONF_WFDOWNLOADS', 'Êtes-vous sûr de vouloir importer les données du module WF-Downloads vers Tdmdownloads ?');
 define('_AM_TDMDOWNLOADS_IMPORT_DONT_DOWNLOADS', "Il n'y a aucun fichier à importer");
 define('_AM_TDMDOWNLOADS_IMPORT_DONT_TOPIC', "Il n'y a aucun fichier à importer");
 define('_AM_TDMDOWNLOADS_IMPORT_DOWNLOADS', 'Importation de fichiers');
@@ -87,7 +87,7 @@ define('_AM_TDMDOWNLOADS_IMPORT_OK', 'Importation effectuée avec succès !');
 define('_AM_TDMDOWNLOADS_IMPORT_VOTE_IMP', '« %s » votes importés ;');
 define(
     '_AM_TDMDOWNLOADS_IMPORT_WARNING',
-    "<span style='color:#FF0000; font-size:16px; font-weight:bold'>Attention !</span><br><br>l'importation supprimera toutes les données de TDMDownloads. Il est fortement recommandé de faire une sauvegarde de toutes vos données d'abord, ainsi que de votre site internet.<br><br>TDM n'est pas responsable si vous perdez vos données. Malheureusement, les captures d'écran ne peuvent pas être copiées."
+    "<span style='color:#FF0000; font-size:16px; font-weight:bold'>Attention !</span><br><br>l'importation supprimera toutes les données de Tdmdownloads. Il est fortement recommandé de faire une sauvegarde de toutes vos données d'abord, ainsi que de votre site internet.<br><br>TDM n'est pas responsable si vous perdez vos données. Malheureusement, les captures d'écran ne peuvent pas être copiées."
 );
 define('_AM_TDMDOWNLOADS_IMPORT_WFDOWNLOADS', 'Importation de WF Downloads (Version 3.23 RC5 uniquement)');
 define('_AM_TDMDOWNLOADS_IMPORT_WFDOWNLOADS_CATIMG', "Sélectionnez le répertoire Upload (le chemin d'accès) pour les images des catégories de WF-Downloads");

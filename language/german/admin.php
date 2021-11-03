@@ -69,8 +69,8 @@ define('_AM_TDMDOWNLOADS_PERM_VIEW_DSC', 'Wählen Sie die Gruppen, die Dateien i
 // Import.php
 define('_AM_TDMDOWNLOADS_IMPORT1', 'Import');
 define('_AM_TDMDOWNLOADS_IMPORT_CAT_IMP', "Kategorien: '%s' importiert");
-define('_AM_TDMDOWNLOADS_IMPORT_CONF_MYDOWNLOADS', 'Wollen sie die Daten von Mydownloads in TDMDownloads importieren');
-define('_AM_TDMDOWNLOADS_IMPORT_CONF_WFDOWNLOADS', 'Wollen sie die Daten von WF-Downloads in TDMDownloads importieren');
+define('_AM_TDMDOWNLOADS_IMPORT_CONF_MYDOWNLOADS', 'Wollen sie die Daten von Mydownloads in Tdmdownloads importieren');
+define('_AM_TDMDOWNLOADS_IMPORT_CONF_WFDOWNLOADS', 'Wollen sie die Daten von WF-Downloads in Tdmdownloads importieren');
 define('_AM_TDMDOWNLOADS_IMPORT_DONT_DOWNLOADS', 'Keine Dateien zum Importieren vorhanden');
 define('_AM_TDMDOWNLOADS_IMPORT_DONT_TOPIC', 'Keine Topics zum Importieren vorhanden');
 define('_AM_TDMDOWNLOADS_IMPORT_DOWNLOADS', 'Dateien importieren');
@@ -87,7 +87,7 @@ define('_AM_TDMDOWNLOADS_IMPORT_OK', 'Import erfolgreich beendet!');
 define('_AM_TDMDOWNLOADS_IMPORT_VOTE_IMP', "Abstimmungen: '%s' importiert;");
 define(
     '_AM_TDMDOWNLOADS_IMPORT_WARNING',
-    "<span style='color:#FF0000; font-size:16px; font-weight:bold'>Achtung !</span><br><br>Durch den Import werden alle Daten in TDMDownloads gelöscht. Es wird dringend empfohlen, zuerst ein Backup der Daten, wenn möglich der gesamten Webseite, zu erstellen.<br><br>TDM übernimmt keinerlei Haftung für verloren gegangene Daten."
+    "<span style='color:#FF0000; font-size:16px; font-weight:bold'>Achtung !</span><br><br>Durch den Import werden alle Daten in Tdmdownloads gelöscht. Es wird dringend empfohlen, zuerst ein Backup der Daten, wenn möglich der gesamten Webseite, zu erstellen.<br><br>TDM übernimmt keinerlei Haftung für verloren gegangene Daten."
 );
 define('_AM_TDMDOWNLOADS_IMPORT_WFDOWNLOADS', 'Import von WF Downloads(nur V3.2 RC2)');
 define('_AM_TDMDOWNLOADS_IMPORT_WFDOWNLOADS_CATIMG', 'Upload-Verzeichnis (Pfad) für Kategoriebilder von WF-Downloads angeben');

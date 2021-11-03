@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /**
- * TDMDownloads
+ * Tdmdownloads
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -16,7 +16,7 @@ declare(strict_types=1);
  * @author      Gregory Mage (Aka Mage)
  */
 // Nom du module
-define('_MI_TDMDOWNLOADS_NAME', 'TDMDownloads');
+define('_MI_TDMDOWNLOADS_NAME', 'Tdmdownloads');
 define('_MI_TDMDOWNLOADS_DIRNAME', basename(dirname(__DIR__, 2)));
 define('_MI_TDMDOWNLOADS_HELP_HEADER', __DIR__ . '/help/helpheader.tpl');
 // Description du module

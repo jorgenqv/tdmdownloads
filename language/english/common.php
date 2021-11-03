@@ -198,3 +198,14 @@ define('CO_' . $moduleDirNameUpper . '_' . 'CONFIG_EXT_IMAGE', 'EXTERNAL Image c
 \define('CO_' . $moduleDirNameUpper . '_' . 'TOTAL_PUBLISHED', 'Published');
 \define('CO_' . $moduleDirNameUpper . '_' . 'TOTAL_REJECTED', 'Rejected');
 \define('CO_' . $moduleDirNameUpper . '_' . 'TOTAL_SUBMITTED', 'Submitted');
+//Cloning
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE', 'Clone');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_DSC', 'Cloning a module has never been this easy! Just type in the name you want for it and hit submit button!');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_TITLE', 'Clone %s');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_NAME', 'Choose a name for the new module');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_NAME_DSC', 'Do not use special characters! <br>Do not choose an existing module dirname or database table name!');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_INVALIDNAME', 'ERROR: Invalid module name, please try another one!');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_EXISTS', 'ERROR: Module name already taken, please try another one!');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_CONGRAT', 'Congratulations! %s was sucessfully created!<br>You may want to make changes in language files.');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_IMAGEFAIL', 'Attention, we failed creating the new module logo. Please consider modifying assets/images/logo_module.png manually!');
+define('CO_' . $moduleDirNameUpper . '_' . 'CLONE_FAIL', "Sorry, we failed in creating the new clone. Maybe you need to temporally set write permissions (CHMOD 777) to 'modules' folder and try again.");
