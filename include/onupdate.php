@@ -59,6 +59,11 @@ function xoops_module_pre_update_tdmdownloads(\XoopsModule $module)
     return $xoopsSuccess && $phpSuccess;
 }
 
+/**
+ * @param $module
+ * @param $prev_version
+ * @return bool|null
+ */
 function xoops_module_update_tdmdownloads(&$module, $prev_version = null)
 {
     $ret                = null;
